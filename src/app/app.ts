@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { DemoPipes } from './demo-pipes/demo-pipes';
+import { TextPlayground } from './text-playground/text-playground';
 @Component({
-  imports: [RouterOutlet],
-  selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+ selector: 'app-root',
+ standalone: true,
+ imports: [RouterOutlet, DemoPipes, TextPlayground],
+ templateUrl: './app.html',
+ styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular-project-demo');
+ title = 'angular-project-demo';
 }

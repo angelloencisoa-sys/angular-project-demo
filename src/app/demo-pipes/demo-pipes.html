@@ -1,0 +1,18 @@
+<hr>
+<h1>Hello, angular-project-demo</h1>
+<h2>1. truncate con valor por defecto (limit = 25)</h2>
+<p><strong>Original:</strong> {{ textoLargo }}</p>
+<p><strong>Truncado:</strong> {{ textoLargo | truncate }}</p>
+<hr>
+<h2>2. truncate con límite personalizado (limit = 40)</h2>
+<p><strong>Truncado a 40:</strong> {{ textoLargo | truncate:40 }}</p>
+<hr>
+<h2>3. truncate respetando palabras completas</h2>
+<p><strong>Palabras completas:</strong> {{ textoLargo | truncate:40:true }}</
+p>
+<hr>
+<h2>4. truncate con puntos suspensivos personalizados</h2>
+<p><strong>Con "→":</strong> {{ textoLargo | truncate:40:true:' →' }}</p>
+<hr>
+<h2>5. Texto que no supera el límite (sin cambios)</h2>
+<p>{{ textoCorto | truncate }}</p>

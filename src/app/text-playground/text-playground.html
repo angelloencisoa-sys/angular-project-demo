@@ -1,0 +1,79 @@
+<section class="playground" aria-labelledby="playground-title">
+  <div class="addition-label">02 / ADECUACIÓN AÑADIDA</div>
+  <h2 id="playground-title">Tu texto, en tiempo real.</h2>
+  <p class="intro">
+    Un probador interactivo del pipe de clase: ajusta, compara y copia una versión breve de tu
+    texto.
+  </p>
+  <div class="workspace">
+    <div class="editor">
+      <label for="source-text">¿Qué quieres resumir?</label>
+      <textarea
+        id="source-text"
+        [(ngModel)]="text"
+        (ngModelChange)="onChange()"
+        rows="6"
+        placeholder="Escribe o pega tu texto aquí…"
+      ></textarea>
+      <div class="text-stats">
+        <span>{{ text.length }} caracteres</span><span>{{ wordCount }} palabras</span>
+      </div>
+      <div class="limit-heading">
+        <label for="text-limit">Límite de caracteres</label
+        ><output for="text-limit">{{ limit }}</output>
+      </div>
+      <input
+        id="text-limit"
+        type="range"
+        min="10"
+        max="200"
+        step="1"
+        [(ngModel)]="limit"
+        (ngModelChange)="onChange()"
+      />
+      <div class="range-labels"><span>10</span><span>200</span></div>
+      <label class="checkbox"
+        ><input type="checkbox" [(ngModel)]="completeWords" (ngModelChange)="onChange()" /> Respetar
+        palabras completas</label
+      >
+      <label for="text-ending">Terminación</label>
+      <select id="text-ending" [(ngModel)]="ellipsis" (ngModelChange)="onChange()">
+        <option value="...">Puntos suspensivos (...)</option>
+        <option value=" →">Flecha (→)</option>
+        <option value="…">Elipsis (…)</option>
+        <option value="">Sin terminación</option>
+      </select>
+      <p class="hint">
+        El límite se aplica al texto; la terminación se añade después. Si la primera palabra es muy
+        larga, se corta por caracteres.
+      </p>
+    </div>
+    <div class="preview">
+      <span class="preview-label">VISTA PREVIA</span>
+      <div class="result" aria-live="polite" aria-atomic="true">
+        {{ result || 'Tu resultado aparecerá aquí.' }}
+      </div>
+      <span class="status">{{
+        !text
+          ? 'Escribe un texto para comenzar'
+          : text.length > limit
+            ? 'Texto truncado'
+            : 'El
+        texto cabe completo'
+      }}</span>
+      <div class="result-stats">
+        <strong>{{ result.length }}</strong
+        ><span>caracteres en el resultado</span>
+      </div>
+      <div class="actions">
+        <button type="button" (click)="copyResult()" [disabled]="!text">Copiar resultado</button
+        ><button class="secondary" type="button" (click)="reset()">Restablecer</button>
+      </div>
+      <p class="copy-message" role="status">{{ copyMessage }}</p>
+      <p class="use-case">
+        Úsalo para preparar descripciones breves de productos, noticias o tarjetas sin cambiar el
+        texto original.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+:root { font-family: 'Segoe UI', Arial, sans-serif; color: #20334d; background: #f2f5fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #2563eb; outline-offset: 4px; }
+.project-shell { max-width: 1100px; margin: auto; padding: 40px 24px; }
+.project-header { padding: 40px; color: white; background: linear-gradient(120deg, #162d50, #255a86); border-radius: 24px; margin-bottom: 28px; }
+.course-label, .section-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; }
+.course-label { color: #a7dce9; }
+.project-title { font-size: clamp(28px, 5vw, 42px); font-weight: 750; letter-spacing: -1.2px; margin: 16px 0; }
+.project-header > p:last-of-type { color: #d1e2f0; line-height: 1.6; }
+.project-header a { display: inline-block; margin-top: 12px; background: #e0f4fa; color: #183b59; padding: 12px 18px; border-radius: 10px; text-decoration: none; font-weight: 650; }
+.class-examples { background: white; border: 1px solid #dde5f0; border-radius: 20px; padding: 30px; box-shadow: 0 8px 30px #20334d08; }
+.section-label { color: #32648a; }
+app-demo-pipes { display: block; }
+app-demo-pipes h1 { font-size: clamp(22px, 4vw, 28px); margin: 18px 0 26px; overflow-wrap: anywhere; }
+app-demo-pipes h2 { font-size: 17px; margin: 24px 0 12px; color: #255a86; }
+app-demo-pipes p { font-size: 15px; line-height: 1.8; overflow-wrap: anywhere; }
+app-demo-pipes strong { color: #20334d; }
+app-demo-pipes hr { border: 0; height: 1px; background: #e8edf4; margin: 20px 0; }
+app-demo-pipes hr:first-child { display: none; }
+app-text-playground { display: block; margin-top: 28px; scroll-margin-top: 20px; }
+footer { color: #66768b; font-size: 13px; text-align: center; padding: 26px 8px 0; line-height: 1.7; }
+@media (max-width: 600px) { .project-shell { padding: 18px 14px; } .project-header { padding: 26px 22px; border-radius: 18px; } .class-examples { padding: 22px; } }
